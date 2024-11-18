@@ -8,9 +8,19 @@
     </div>
   </div>
 
-  <div id="body" class="row">
-    <div class="col">
-    <app-series-list></app-series-list>
+  <div class="container-fluid" id="principal">
+    <div class="row">
+      <div class="col-md-12">
+        <div>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
+  <footer class="page-footer">
+      <div class="footer-copyright text-center py-2">
+        Sample proyect -
+        <a routerLink="/series/list" id="colorFooterText2"> Seriesly</a>
+      </div>
+  </footer>
 </div>

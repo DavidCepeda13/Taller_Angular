@@ -1,3 +1,21 @@
-<p>
-  series-detail works!
-</p>
+<div class="card">
+  <div id="headers" class="card-header">
+    <h3 class="card-title">{{ serieDetail.name }}</h3>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <img [src]="serieDetail.poster" class="img-fluid" alt="Serie Image">
+    </div>
+    <div class="row">
+      <div class="col">
+        <strong> Channel: </strong> {{ serieDetail.channel }}
+      </div>
+      <div class="col">
+        <strong> Seasons: </strong> {{ serieDetail.seasons }}
+      </div>
+      <h5>Description:</h5> 
+      <p>{{ serieDetail.description }}</p>
+      <p><strong>Webpage:</strong> <a [href]="serieDetail.webpage" target="_blank">{{ serieDetail.webpage }}</a></p>
+    </div>
+  </div>
+</div>

@@ -11,6 +11,8 @@ export class SeriesListComponent implements OnInit {
   /* <Atributos> */
   series: Array<Serie> = [];
   seasonsAverage: number = 0;
+  selected: boolean = false;
+  selectedSerie!: Serie;
 
   constructor(private serieService: SerieService) { }
 
@@ -29,6 +31,11 @@ export class SeriesListComponent implements OnInit {
         this.seasonsAverage /= count;
       }
     );
+  }
+
+  onSelected(serie: Serie): void{
+    this.selected = true;
+    this.selectedSerie = serie;
   }
 
   ngOnInit() {

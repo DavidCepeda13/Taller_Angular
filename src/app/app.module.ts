@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SerieModule } from './serie/serie.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SerieRoutingRoutes } from './serie/serie-routing.routing';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     SerieModule,
-    HttpClientModule
+    HttpClientModule,
+    SerieRoutingRoutes
   ],
   providers: [],
   bootstrap: [AppComponent]

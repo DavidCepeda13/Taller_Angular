@@ -1,37 +1,46 @@
 <head>
   <link rel="stylesheet" href="series-list.component.css">
 </head>
+<div class="row">
+  <div class="col">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th id="headerTable" class="h4">#</th>
+          <th id="headerTable" class="h4">Name</th>
+          <th id="headerTable" class="h4">Channel</th>
+          <th id="headerTable" class="h4">Seasons</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        @for (serie of series; track serie) {
+          <tr (click)="onSelected(serie)">
+            <td>
+              <dd>{{serie.id}}</dd>
+            </td>
+            <td>
+              <dd id="name">{{serie.name}}</dd>
+            </td>
+            <td>
+              <dd>{{serie.channel}}</dd>
+            </td>
+            <td>
+              <dd>{{serie.seasons}}</dd>
+            </td>
+          </tr>
+        }
+        
+      </tbody>
+      <tfoot>
+        <p id="avgSeasons"> Seasons average: {{seasonsAverage}} </p>
+      </tfoot>
+    </table>
+  </div>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th id="headerTable" class="h4">#</th>
-      <th id="headerTable" class="h4">Name</th>
-      <th id="headerTable" class="h4">Channel</th>
-      <th id="headerTable" class="h4">Seasons</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    @for (serie of series; track serie) {
-      <tr>
-        <td>
-          <dd>{{serie.id}}</dd>
-        </td>
-        <td>
-          <dd id="name">{{serie.name}}</dd>
-        </td>
-        <td>
-          <dd>{{serie.channel}}</dd>
-        </td>
-        <td>
-          <dd>{{serie.seasons}}</dd>
-        </td>
-      </tr>
+  <div class="col">
+    @if (selected) {
+      <app-series-detail [serieDetail]="selectedSerie"></app-series-detail>
     }
-    
-  </tbody>
-  <tfoot>
-    <p id="avgSeasons"> Seasons average: {{seasonsAverage}} </p>
-  </tfoot>
-</table>
+  </div>
+</div>
